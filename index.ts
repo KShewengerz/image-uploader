@@ -9,8 +9,8 @@ import * as path from "path";
 import * as favicon from "serve-favicon";
 import * as cors from "cors";
 
-import { indexRoutes } from "./routes/index";
-import { userRoutes } from "./routes/user/-index";
+import { indexRoutes } from "./controllers/index";
+import { userRoutes } from "./controllers/user/-index";
 
 
 export class Index {
