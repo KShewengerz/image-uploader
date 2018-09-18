@@ -1,0 +1,7 @@
+@import 'theme';
+
+
+body {
+  background-color: mat-color($primary);
+  font-family: mat-font-family($custom-typography);
+}
