@@ -1,6 +1,5 @@
 @import '~@angular/material/theming';
-@import 'palette';
-@import 'typography';
+@import 'colors';
 
 $primary: mat-palette($mat-custom-blue);
 $accent: mat-palette($mat-light-blue);

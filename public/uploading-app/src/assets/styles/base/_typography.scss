@@ -1,14 +1,9 @@
 @import '~@angular/material/theming';
+@import '../utils/font';
 
-@font-face {
-  font-family: Lato;
-  src: url("../fonts/Lato-Light.ttf");
-}
+@include font-face('Lato', '/assets/fonts/Lato-Light.ttf', 'truetype');
+@include font-face('Lato-Bold', '/assets/fonts/Lato-Regular.ttf', 'truetype');
 
-@font-face {
-  font-family: Lato-Bold;
-  src: url("../fonts/Lato-Regular.ttf");
-}
 
 $custom-typography: mat-typography-config($font-family: 'Lato, sans-serif');
 
