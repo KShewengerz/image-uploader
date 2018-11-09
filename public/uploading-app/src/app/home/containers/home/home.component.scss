@@ -1,0 +1,35 @@
+@import 'main';
+
+.container {
+  background-color: $blue;
+
+  .content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+  }
+}
+
+.mat-card {
+  width: 350px;
+  max-width: 100%;
+  padding: 45px;
+
+  .mat-card-header {
+    align-items: center;
+    flex-direction: column-reverse;
+  }
+
+  .mat-icon {
+    color: $blue;
+    font-size: 80px;
+    width: auto;
+  }
+
+  .mat-card-title {
+    color: lighten($blue, 5%);
+    font-weight: 600;
+    font-size: 20px;
+  }
+}

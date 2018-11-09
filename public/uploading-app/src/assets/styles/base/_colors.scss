@@ -1,5 +1,9 @@
 
 $blue: #419cf5;
+$gray: #aaaaaa;
+
+$light-blue: lighten($blue, 30%);
+$light-gray: #ebebeb;
 
 $mat-custom-blue: (
   50 : #e8f3fe,
