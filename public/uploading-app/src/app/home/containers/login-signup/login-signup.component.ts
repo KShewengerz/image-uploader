@@ -4,11 +4,11 @@ import { Credentials } from '@app/home/models/user.interface';
 
 
 @Component({
-  selector: 'app-login-signup-menu',
-  templateUrl: './login-signup-menu.component.html',
-  styleUrls: ['./login-signup-menu.component.scss']
+  selector: 'app-login-signup',
+  templateUrl: './login-signup.component.html',
+  styleUrls: ['./login-signup.component.scss']
 })
-export class LoginSignupMenuComponent implements OnInit {
+export class LoginSignupComponent implements OnInit {
 
   constructor() { }
 
