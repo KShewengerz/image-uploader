@@ -1,4 +1,7 @@
-import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import {Component, Input, Output, EventEmitter } from '@angular/core';
+import { FormGroup } from '@angular/forms';
+
+import { FormlyFieldConfig } from '@ngx-formly/core';
 
 import { Credentials } from '@app/home/models/user.interface';
 
@@ -8,13 +11,14 @@ import { Credentials } from '@app/home/models/user.interface';
   templateUrl: './form.component.html',
   styleUrls: ['./form.component.scss']
 })
-export class FormComponent implements OnInit {
-
+export class FormComponent {
+  
+  form: FormGroup = new FormGroup({});
+  
   @Input() type: string;
+  @Input() fields: FormlyFieldConfig[];
   @Output() submitted: EventEmitter<Credentials> = new EventEmitter<Credentials>();
   
-  constructor() { }
-
-  ngOnInit() {}
+  constructor() {}
 
 }

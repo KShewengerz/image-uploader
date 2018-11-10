@@ -1,23 +1,8 @@
-<form novalidate>
+<formly-form [fields]="fields"
+             [form]="form">
 
-  <mat-form-field>
-    <input matInput
-           placeholder="Username">
-  </mat-form-field>
+  <button type="submit"
+          color="primary"
+          mat-stroked-button>{{ type }}</button>
 
-  <mat-form-field>
-    <input matInput
-           type="password"
-           placeholder="Password">
-  </mat-form-field>
-
-  <mat-form-field *ngIf="type === 'Sign Up'">
-    <input matInput
-           type="password"
-           placeholder="Confirm Password">
-  </mat-form-field>
-
-  <button mat-stroked-button
-          type="submit"
-          color="primary">{{ type }}</button>
-</form>
+</formly-form>
