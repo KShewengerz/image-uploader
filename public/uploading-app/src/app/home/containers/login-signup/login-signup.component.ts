@@ -1,10 +1,10 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 
-import { FormlyFieldConfig } from '@ngx-formly/core';
+import { FormComponent } from '@app/home/components/form/form.component';
 
 import { Credentials } from '@app/home/models/user.interface';
 
-import { tabs, formFields, Tab } from '@app/home/containers/login-signup/login-signup.data';
+import { tabs, Tab } from '@app/home/containers/login-signup/login-signup.data';
 
 
 @Component({
@@ -14,15 +14,16 @@ import { tabs, formFields, Tab } from '@app/home/containers/login-signup/login-s
 })
 export class LoginSignupComponent implements OnInit {
   
+  @ViewChild(FormComponent) formComponent: FormComponent;
+  
   tabs: Tab[] = tabs;
-  formFields: FormlyFieldConfig[] = formFields;
   
   constructor() { }
 
   ngOnInit() {}
   
   selectTab(index: number): void {
-    this.formFields[2].hideExpression = !this.formFields[2].hideExpression;
+    this.formComponent.form.reset();
   }
   
   login(values: Credentials): void {

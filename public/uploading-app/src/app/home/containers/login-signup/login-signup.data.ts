@@ -1,17 +1,8 @@
 import { FormlyFieldConfig } from '@ngx-formly/core';
 
 
-/* TAB */
-export type Tab = { label: string; type: string };
-
-export const tabs: Tab[] = [
-  { label: 'Existing User', type: 'Log In' },
-  { label: 'New User', type: 'Sign Up' },
-];
-
-
-/* FORM FIELDS */
-export const formFields: FormlyFieldConfig[] = [
+/* SIGN IN FORM FIELDS */
+export const signInFormFields: FormlyFieldConfig[] = [
   {
     key: 'username',
     type: 'input',
@@ -28,7 +19,12 @@ export const formFields: FormlyFieldConfig[] = [
       placeholder: 'Password',
       required: true,
     }
-  },
+  }
+];
+
+/* SIGN UP FORM FIELDS */
+export const signUpFormFields: FormlyFieldConfig[] = [
+  ...signInFormFields,
   {
     key: 'confirmPassword',
     type: 'input',
@@ -36,7 +32,14 @@ export const formFields: FormlyFieldConfig[] = [
       type: 'password',
       placeholder: 'Confirm Password',
       required: true,
-    },
-    hideExpression: true
+    }
   }
+];
+
+/* TAB */
+export type Tab = { label: string; type: string, fields: FormlyFieldConfig[] };
+
+export const tabs: Tab[] = [
+  { label: 'Existing User', type: 'Log In', fields: signInFormFields },
+  { label: 'New User', type: 'Sign Up', fields: signUpFormFields },
 ];
