@@ -5,9 +5,9 @@ import { HomeMaterialModule } from '@app/home/home-material.module';
 
 import { HomeComponent } from '@app/home/containers/home/home.component';
 import { FormComponent } from '@app/home/components/form/form.component';
+import { LoginSignupMenuComponent } from './components/login-signup-menu/login-signup-menu.component';
 
 import { HomeRouting } from '@app/home/home-routing.module';
-import { LoginSignupMenuComponent } from './components/login-signup-menu/login-signup-menu.component';
 
 
 @NgModule({

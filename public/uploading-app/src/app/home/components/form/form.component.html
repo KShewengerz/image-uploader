@@ -1,11 +1,23 @@
-<mat-form-field>
-  <input matInput
-         placeholder="Username">
-</mat-form-field>
+<form novalidate>
 
-<mat-form-field>
-  <input matInput
-         placeholder="Password">
-</mat-form-field>
+  <mat-form-field>
+    <input matInput
+           placeholder="Username">
+  </mat-form-field>
 
-<button mat-stroked-button color="primary">Log In</button>
+  <mat-form-field>
+    <input matInput
+           type="password"
+           placeholder="Password">
+  </mat-form-field>
+
+  <mat-form-field *ngIf="type === 'Sign Up'">
+    <input matInput
+           type="password"
+           placeholder="Confirm Password">
+  </mat-form-field>
+
+  <button mat-stroked-button
+          type="submit"
+          color="primary">{{ type }}</button>
+</form>
