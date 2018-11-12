@@ -3,7 +3,7 @@ import { FormGroup } from '@angular/forms';
 
 import { FormlyFieldConfig } from '@ngx-formly/core';
 
-import { Credentials } from '@app/home/models/user.interface';
+import { Credentials } from '@app/home/models/credentials.interface';
 
 
 @Component({
@@ -14,11 +14,16 @@ import { Credentials } from '@app/home/models/user.interface';
 export class FormComponent {
   
   form: FormGroup = new FormGroup({});
+  model: Credentials = { username: '', password: '' };
   
   @Input() type: string;
   @Input() fields: FormlyFieldConfig[];
   @Output() submitted: EventEmitter<Credentials> = new EventEmitter<Credentials>();
   
   constructor() {}
+  
+  submitForm(credentials: Credentials): void {
+    this.submitted.next(credentials);
+  }
 
 }

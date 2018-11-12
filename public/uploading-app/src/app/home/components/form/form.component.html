@@ -1,8 +1,10 @@
-<formly-form [fields]="fields"
-             [form]="form">
+<formly-form [form]="form"
+             [fields]="fields"
+             [model]="model">
 
   <button type="submit"
           color="primary"
-          mat-stroked-button>{{ type }}</button>
+          mat-stroked-button
+          (click)="submitForm(model)">{{ type }}</button>
 
 </formly-form>

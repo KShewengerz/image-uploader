@@ -5,7 +5,8 @@
             [label]="tab.label">
 
     <app-form [type]="tab.type"
-              [fields]="tab.fields"></app-form>
+              [fields]="tab.fields"
+              (submitted)="onSubmittedForm($event)"></app-form>
 
   </mat-tab>
 

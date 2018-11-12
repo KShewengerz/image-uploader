@@ -1,8 +1,9 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
+import { Router } from '@angular/router';
 
 import { FormComponent } from '@app/home/components/form/form.component';
 
-import { Credentials } from '@app/home/models/user.interface';
+import { Credentials } from '@app/home/models/credentials.interface';
 
 import { tabs, Tab } from '@app/home/containers/login-signup/login-signup.data';
 
@@ -18,7 +19,7 @@ export class LoginSignupComponent implements OnInit {
   
   tabs: Tab[] = tabs;
   
-  constructor() { }
+  constructor(private router: Router) { }
 
   ngOnInit() {}
   
@@ -26,12 +27,10 @@ export class LoginSignupComponent implements OnInit {
     this.formComponent.form.reset();
   }
   
-  login(values: Credentials): void {
-    console.log('login', values);
-  }
-  
-  signup(values: Credentials): void {
-    console.log('signup', values);
+  onSubmittedForm(credentials: Credentials): void {
+    console.log('login-signup', credentials);
+    
+    this.router.navigate(['upload']);
   }
 
 }
