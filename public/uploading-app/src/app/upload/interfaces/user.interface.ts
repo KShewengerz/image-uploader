@@ -1,4 +1,4 @@
-import { Gender } from '@app/upload/models/gender.enum';
+import { Gender } from '@app/upload/enums/gender.enum';
 import { Credentials } from '@app/home/models/credentials.interface';
 
 

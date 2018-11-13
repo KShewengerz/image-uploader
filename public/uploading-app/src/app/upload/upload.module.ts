@@ -12,9 +12,13 @@ import { PhotoListComponent } from '@app/upload/components/photo-list/photo-list
 import { VideoListComponent } from '@app/upload/components/video-list/video-list.component';
 import { UploadListComponent } from '@app/upload/components/upload-list/upload-list.component';
 import { UserFormComponent } from '@app/upload/components/user-form/user-form.component';
+import { FileManagerComponent } from '@app/upload/components/file-manager/file-manager.component';
 
 // Pipe
 import { FileSizePipe } from '@app/upload/pipes/file-size.pipe';
+
+// Directives
+import { FileManagerDirective } from '@app/upload/components/file-manager/file-manager.directive';
 
 // Modules
 import { UploadMaterialModule } from '@app/upload/upload-material.module';
@@ -38,8 +42,11 @@ import { UploadRouting } from '@app/upload/upload-routing.module';
     VideoListComponent,
     UploadListComponent,
     UserFormComponent,
+    FileManagerComponent,
     // Pipe
-    FileSizePipe
+    FileSizePipe,
+    // Directive
+    FileManagerDirective
   ]
 })
 export class UploadModule {}

@@ -1,4 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
+
+import { File } from '@app/upload/interfaces/file.interface';
 
 
 @Component({
@@ -8,6 +10,8 @@ import { Component } from '@angular/core';
 })
 export class UploadListComponent {
 
+  @Input() files: File;
+  
   constructor() { }
 
 }

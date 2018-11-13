@@ -7,7 +7,7 @@ import { Component } from '@angular/core';
   styleUrls   : ['./media.component.scss']
 })
 export class MediaComponent {
-
-  constructor() { }
+  
+ constructor() {}
 
 }
