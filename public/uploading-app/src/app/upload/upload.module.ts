@@ -8,8 +8,8 @@ import { ProfileComponent } from '@app/upload/containers/profile/profile.compone
 import { MediaComponent } from '@app/upload/containers/media/media.component';
 
 // Components
-import { PhotoListComponent } from '@app/upload/components/photo-list/photo-list.component';
-import { VideoListComponent } from '@app/upload/components/video-list/video-list.component';
+import { PhotoGridListComponent } from '@app/upload/components/photo-grid-list/photo-grid-list.component';
+import { VideoGridListComponent } from '@app/upload/components/video-grid-list/video-grid-list.component';
 import { UploadListComponent } from '@app/upload/components/upload-list/upload-list.component';
 import { UserFormComponent } from '@app/upload/components/user-form/user-form.component';
 import { FileManagerComponent } from '@app/upload/components/file-manager/file-manager.component';
@@ -38,8 +38,8 @@ import { UploadRouting } from '@app/upload/upload-routing.module';
     ProfileComponent,
     MediaComponent,
     // Components
-    PhotoListComponent,
-    VideoListComponent,
+    PhotoGridListComponent,
+    VideoGridListComponent,
     UploadListComponent,
     UserFormComponent,
     FileManagerComponent,
