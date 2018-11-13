@@ -1,0 +1,90 @@
+@import 'main';
+
+
+$start-breakpoint: 549px;
+%color-white { color: white !important; }
+
+
+// TOOLBAR
+.mat-toolbar {
+
+  @extend %color-white;
+
+  .mat-toolbar-row {
+    padding: 0 35px;
+  }
+
+  span:first-child {
+    font-weight: bold;
+    font-size: 15px;
+  }
+
+  .logo > .mat-icon {
+    vertical-align: middle;
+    padding-right: 10px;
+    position: relative;
+    top: -1px;
+  }
+
+}
+
+// UPLOAD CONTAINER
+.upload-container {
+
+  @extend %color-white;
+
+  @include media($start-breakpoint) {
+    & { padding-bottom: 20px; }
+  }
+
+  background-color: $blue;
+  padding: 65px 20px 0;
+
+  .headline {
+    @include media($start-breakpoint) {
+      h2 { font-size: 1.2em; }
+
+      p { font-size: 0.7em; }
+    }
+
+    p { margin-top: 5px; }
+  }
+
+  .media-icons {
+    @include media($start-breakpoint) {
+      .mat-icon {
+        font-size: 25px !important;
+
+        &:first-child { padding-right: 5px !important; }
+      }
+    }
+
+    padding-top: 30px;
+
+    .mat-icon {
+      font-size: 30px;
+
+      &:first-child { padding-right: 15px; }
+    }
+  }
+}
+
+// FILE UPLOAD
+.file-upload {
+
+  .mat-icon {
+    $breakpoints: (549: 20, 468: 17, 370: 14);
+
+    @each $breakpoint, $size in $breakpoints {
+      @media screen and (max-width: #{$breakpoint}px) {
+        & { font-size: #{$size}em !important; }
+      }
+    }
+
+    font-size: 25em;
+    width: auto;
+    height: auto;
+  }
+
+}
+

@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
+
 // Containers
 import { UploadComponent } from '@app/upload/containers/upload/upload.component';
 import { ProfileComponent } from '@app/upload/containers/profile/profile.component';
@@ -15,14 +16,16 @@ import { UserFormComponent } from '@app/upload/components/user-form/user-form.co
 // Pipe
 import { FileSizePipe } from '@app/upload/pipes/file-size.pipe';
 
-// Route
+// Modules
+import { UploadMaterialModule } from '@app/upload/upload-material.module';
 import { UploadRouting } from '@app/upload/upload-routing.module';
 
 
 @NgModule({
   imports: [
     CommonModule,
-    // Route
+    // Custom Modules
+    UploadMaterialModule,
     UploadRouting
   ],
   declarations: [
