@@ -4,7 +4,7 @@
 
 $sans-serif: sans-serif;
 $Montserrat: Montserrat, #{$sans-serif};
-$Montserrat-Bold: Montserrat-Medium, #{$sans-serif};
+$Montserrat-Bold: Montserrat-Regular, #{$sans-serif};
 
 @include font-face('Montserrat', '/assets/fonts/Montserrat-Light.ttf', 'truetype');
 @include font-face('Montserrat-Regular', '/assets/fonts/Montserrat-Regular.ttf', 'truetype');

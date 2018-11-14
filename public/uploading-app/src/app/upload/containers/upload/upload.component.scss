@@ -1,7 +1,6 @@
 @import 'main';
 
 
-
 // TOOLBAR
 .mat-toolbar {
 
@@ -16,12 +15,17 @@
     font-size: 15px;
   }
 
-  .logo > .mat-icon {
+}
+
+// LOGO
+.logo {
+  .mat-icon {
     vertical-align: middle;
     padding-right: 10px;
     position: relative;
     top: -1px;
   }
 
+  span { font-family: $Montserrat-Bold; }
 }
 
