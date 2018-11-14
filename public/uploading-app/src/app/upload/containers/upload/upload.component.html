@@ -36,7 +36,8 @@
   <app-file-manager *ngIf="!isEditProfile"></app-file-manager>
 
   <!-- PROFILE -->
-  <app-profile *ngIf="isEditProfile"></app-profile>
+  <app-edit-profile-form *ngIf="isEditProfile"
+                         (hideForm)="isEditProfile = false"></app-edit-profile-form>
 
 </div>
 

@@ -9,11 +9,11 @@ import { File } from '@app/upload/interfaces/file.interface';
   templateUrl : './file-manager.component.html',
   styleUrls   : ['./file-manager.component.scss'],
   animations  : [
-    trigger('fade', [
-      state('void', style({ opacity: 0 })),
+    trigger('fadeIn', [
+      state('void', style({ 'opacity': 0 })),
       transition('* <=> void', animate('1000ms ease-in-out'))
     ]),
-    trigger('down', [
+    trigger('slideDown', [
       state('void', style({ 'transform': 'translateY(-10%)' })),
       transition('* <=> void', animate('1000ms ease-in-out'))
     ])

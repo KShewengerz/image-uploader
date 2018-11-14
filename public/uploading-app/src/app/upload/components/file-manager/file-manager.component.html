@@ -1,6 +1,6 @@
 <div class="text-center">
 
-  <div [@fade]>
+  <div [@fadeIn]>
     <!-- HEADLINE -->
     <div class="headline"
          >
@@ -26,7 +26,7 @@
        #fileManager="appFileManager"
        [fileRef]="file"
        (click)="fileManager.openFileManager()"
-       [@down]>
+       [@slideDown]>
     <div class="file-upload">
       <mat-icon>cloud</mat-icon>
 

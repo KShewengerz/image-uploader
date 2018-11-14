@@ -4,7 +4,7 @@
   <mat-tab  *ngFor="let tab of tabs"
             [label]="tab.label">
 
-    <app-form [type]="tab.type"
+    <app-form [buttonLabel]="tab.buttonLabel"
               [fields]="tab.fields"
               (submitted)="onSubmittedForm($event)"></app-form>
 

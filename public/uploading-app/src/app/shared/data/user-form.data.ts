@@ -35,11 +35,3 @@ export const signUpFormFields: FormlyFieldConfig[] = [
     }
   }
 ];
-
-/* TAB */
-export type Tab = { label: string; type: string, fields: FormlyFieldConfig[] };
-
-export const tabs: Tab[] = [
-  { label: 'Existing User', type: 'Log In', fields: signInFormFields },
-  { label: 'New User', type: 'Sign Up', fields: signUpFormFields },
-];

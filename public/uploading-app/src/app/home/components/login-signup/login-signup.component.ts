@@ -1,11 +1,11 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { Router } from '@angular/router';
 
-import { FormComponent } from '@app/home/components/form/form.component';
+import { FormComponent } from '@app/shared/components/form/form.component';
 
-import { Credentials } from '@app/home/models/credentials.interface';
+import { Credentials } from '@app/shared/interfaces/credentials.interface';
 
-import { tabs, Tab } from '@app/home/containers/login-signup/login-signup.data';
+import { tabs, Tab } from '@app/home/components/login-signup/login-signup.data';
 
 
 @Component({

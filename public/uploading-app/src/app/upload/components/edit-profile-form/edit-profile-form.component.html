@@ -1,0 +1,17 @@
+<div class="container"
+     [@slideDown]>
+  <div class="form text-center">
+
+    <div class="cursor-pointer undo"
+         (click)="hideForm.next(true)">
+      <mat-icon>keyboard_arrow_left</mat-icon>
+      <span>Back to Upload</span>
+    </div>
+
+    <h3>Edit Profile</h3>
+
+    <app-form [buttonLabel]="'Update'"
+              [fields]="fields"
+              (submitted)="onSubmittedForm($event)"></app-form>
+  </div>
+</div>
