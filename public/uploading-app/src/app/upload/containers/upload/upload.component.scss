@@ -7,7 +7,14 @@
   color: white !important;
 
   .mat-toolbar-row {
+    @include media(375px) {
+      & {
+        padding: 0 20px !important;
+      }
+    }
+
     padding: 0 35px;
+    margin-top: 5px;
   }
 
   span:first-child {
@@ -29,3 +36,18 @@
   span { font-family: $Montserrat-Bold; }
 }
 
+// MENU
+::ng-deep .menu {
+  .mat-menu-item {
+    font-size: 13px !important;
+    height: 40px !important;
+    line-height: 3 !important;
+  }
+}
+
+// CONTAINER
+.container {
+  color: white !important;
+  background-color: $blue;
+  padding: 65px 20px 0;
+}

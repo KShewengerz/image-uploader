@@ -1,27 +1,32 @@
-<div class="container text-center upload-container">
+<div class="text-center">
 
-  <!-- HEADLINE -->
-  <div class="headline">
-    <h2>Upload your photos and videos</h2>
-    <p>We only accept <strong>jpg</strong> and <strong>png</strong> for photo and <strong>mp4</strong> for video</p>
-  </div><!-- END .headline -->
+  <div [@fade]>
+    <!-- HEADLINE -->
+    <div class="headline"
+         >
+      <h2>Upload your photos and videos</h2>
+      <p>We only accept <strong>jpg</strong> and <strong>png</strong> for photo and <strong>mp4</strong> for video</p>
+    </div><!-- END .headline -->
 
-  <!-- MEDIA ICONS -->
-  <div class="media-icons">
-    <mat-icon>insert_photo</mat-icon>
-    <mat-icon>video_library</mat-icon>
-  </div><!-- END .media-icons -->
+    <!-- MEDIA ICONS -->
+    <div class="media-icons">
+      <mat-icon>insert_photo</mat-icon>
+      <mat-icon>video_library</mat-icon>
+    </div><!-- END .media-icons -->
+  </div>
 
   <!-- UPLOAD LIST -->
   <app-upload-list *ngIf="filesSelected"
-                   [files]="filesSelected"></app-upload-list>
+                   [files]="filesSelected"
+                   ></app-upload-list>
 
   <!-- UPLOAD INSTRUCTIONS -->
   <div class="cursor-pointer"
        appFileManager
        #fileManager="appFileManager"
        [fileRef]="file"
-       (click)="fileManager.openFileManager()">
+       (click)="fileManager.openFileManager()"
+       [@down]>
     <div class="file-upload">
       <mat-icon>cloud</mat-icon>
 

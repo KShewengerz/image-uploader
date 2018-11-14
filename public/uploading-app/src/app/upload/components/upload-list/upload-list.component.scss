@@ -15,42 +15,48 @@ $start-breakpoint: 549px;
   width: 600px;
   max-width: 100%;
   margin: 70px auto 0;
-
-  .item { margin-bottom: 35px; }
 }
 
 // FILE
-.file {
-  @include media($start-breakpoint) {
-    & { font-size: 13px!important; }
+.item {
+
+  margin-bottom: 35px;
+
+  &:last-child { margin-bottom: 0 !important; }
+
+  .file {
+    @include media($start-breakpoint) {
+      & { font-size: 13px!important; }
+
+      span:first-of-type {
+        text-align: left;
+        width: 150px;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+    }
+
+    font-size: 14px;
 
     span:first-of-type {
-      text-align: left;
-      width: 150px;
-      white-space: nowrap;
-      overflow: hidden;
-      text-overflow: ellipsis;
+      float: left;
+      font-weight: bold;
+      margin-bottom: 8px;
     }
+
+    span:last-of-type { float: right; }
   }
-
-  font-size: 14px;
-
-  span:first-of-type {
-    float: left;
-    font-weight: bold;
-    margin-bottom: 8px;
-  }
-
-  span:last-of-type { float: right; }
 }
+
 
 // PROGRESS BAR
 .mat-progress-bar {
 
-  /deep/.mat-progress-bar-fill::after { background-color: white; }
+  ::ng-deep .mat-progress-bar-fill::after { background-color: white; }
 
-  /deep/.mat-progress-bar-background { fill: #ffffff00 !important; }
+  ::ng-deep .mat-progress-bar-background { fill: #ffffff00 !important; }
 
-  /deep/.mat-progress-bar-buffer { background-color: #c6e1fcb3 }
+  ::ng-deep .mat-progress-bar-buffer { background-color: #c6e1fcb3 }
 
 }

@@ -5,19 +5,16 @@ $start-breakpoint: 549px;
 
 
 // UPLOAD CONTAINER
-.upload-container {
-
-  color: white !important;
-
+:host-context(.container) {
   @include media($start-breakpoint) {
-    & { padding-bottom: 20px; }
+    & {
+      padding-top: 50px !important;
+      padding-bottom: 20px;
+    }
   }
-
-  input[type="file"] { visibility: hidden; }
-
-  background-color: $blue;
-  padding: 65px 20px 0;
 }
+
+input[type="file"] { visibility: hidden; }
 
 // HEADLINE
 .headline {
@@ -54,6 +51,7 @@ $start-breakpoint: 549px;
 
   display: inline-flex;
   justify-content: center;
+  margin-top: 20px;
 
   & > .mat-icon {
     $breakpoints: (549: 20, 468: 17, 370: 14);

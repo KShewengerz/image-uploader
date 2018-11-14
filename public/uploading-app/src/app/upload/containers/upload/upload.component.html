@@ -2,6 +2,7 @@
 <mat-toolbar color="primary">
   <mat-toolbar-row>
 
+    <!-- LOGO -->
     <span class="logo">
       <mat-icon>cloud_upload</mat-icon>
       <span>Media Uploader</span>
@@ -9,10 +10,33 @@
 
     <span class="spacer"></span>
 
-    <mat-icon>perm_identity</mat-icon>
+    <!-- MENU -->
+    <div>
+      <mat-icon class="cursor-pointer"
+                [matMenuTriggerFor]="menu">perm_identity</mat-icon>
+
+      <mat-menu #menu="matMenu"
+                class="menu"
+                [overlapTrigger]="false">
+        <span mat-menu-item
+              (click)="isEditProfile = true">Edit Profile</span>
+
+        <span mat-menu-item
+              (click)="logOut()">Log Out</span>
+      </mat-menu>
+    </div>
+
 
   </mat-toolbar-row>
 </mat-toolbar>
 
-<!-- MEDIA -->
-<app-file-manager></app-file-manager>
+<div class="container">
+
+  <!-- MEDIA -->
+  <app-file-manager *ngIf="!isEditProfile"></app-file-manager>
+
+  <!-- PROFILE -->
+  <app-profile *ngIf="isEditProfile"></app-profile>
+
+</div>
+
