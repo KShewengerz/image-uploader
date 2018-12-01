@@ -3,4 +3,9 @@ $alignments: left, right, center;
 
 @each $alignment in $alignments {
   .text-#{$alignment} { text-align: $alignment; }
+
+  @if $alignment != center {
+    .float-#{$alignment} { float: $alignment; }
+  }
+
 }

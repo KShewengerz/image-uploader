@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 
 
 @Component({
-  selector    : 'app-video-list',
+  selector    : 'app-video-grid-list',
   templateUrl : './video-grid-list.component.html',
   styleUrls   : ['./video-grid-list.component.scss']
 })
