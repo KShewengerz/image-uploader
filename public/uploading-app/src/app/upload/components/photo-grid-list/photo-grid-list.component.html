@@ -1,11 +1,13 @@
-<ul class="mdc-image-list mdc-image-list--masonry masonry-image-list">
+<ul class="mdc-image-list mdc-image-list--masonry masonry-image-list"
+    [@listStagger]="images.length">
 
   <li class="mdc-image-list__item"
-      *ngFor="let link of imageLinks">
+      *ngFor="let image of images">
 
     <img class="mdc-image-list__image"
-         [src]="link">
+         [src]="image.link">
 
   </li>
 
 </ul>
+

@@ -1,28 +1,30 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+
+import { UploadService } from '@app/upload/services/upload.service';
+
+import { animations } from '@app/upload/components/photo-grid-list/photo-grid-list.animations';
 
 
 @Component({
   selector: 'app-photo-grid-list',
   templateUrl: './photo-grid-list.component.html',
-  styleUrls: ['./photo-grid-list.component.scss']
+  styleUrls: ['./photo-grid-list.component.scss'],
+  animations: [ animations.listStaggerTrigger ]
 })
-export class PhotoGridListComponent {
+export class PhotoGridListComponent implements OnInit {
   
-  baseImageUrl: string = 'https://s3.amazonaws.com/sample-v1';
+  images: string[] = [];
   
-  imageLinks: string[] = [
-    `${this.baseImageUrl}/architecture.jpg`,
-    `${this.baseImageUrl}/boat.jpg`,
-    `${this.baseImageUrl}/bonding.jpg`,
-    `${this.baseImageUrl}/books.jpg`,
-    `${this.baseImageUrl}/family.jpg`,
-    `${this.baseImageUrl}/overlooking.jpg`,
-    `${this.baseImageUrl}/overview.jpg`,
-    `${this.baseImageUrl}/river.jpg`,
-    `${this.baseImageUrl}/rocks.jpg`,
-    `${this.baseImageUrl}/wedding.jpg`
-  ];
+  constructor(private uploadService: UploadService) { }
   
-  constructor() { }
+  ngOnInit(): void {
+    this.fetchImages();
+  }
+  
+  fetchImages() {
+    this.uploadService
+      .getPhotos()
+      .subscribe(images => this.images = images);
+  }
 
 }

@@ -62,4 +62,7 @@ $start-breakpoint: 549px;
 }
 
 // CONTENT
-.content { padding: 50px 0; }
+.content {
+  padding: 50px 0;
+  min-height: 40em;
+}
