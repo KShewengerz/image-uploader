@@ -9,6 +9,7 @@ $start-breakpoint: 549px;
   position: relative;
 }
 
+// TABS
 .mat-tab-nav-bar {
   @include media($start-breakpoint) {
     & {

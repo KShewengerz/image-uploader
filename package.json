@@ -3,7 +3,7 @@
   "description": "An Angular5 and Node Express with SequelizeJS and MySQL application for Image & Video Uploading using multer package",
   "main": "index.js",
   "scripts": {
-    "build": "npm install && cd ./public/uploading-app && npm install",
+    "install-ngx-express-deps": "npm install && cd ./public/uploading-app && npm install",
     "ng-start": "cd ./public/uploading-app && tsc && npm start",
     "express-start": "tsc-watch --onSuccess 'nodemon ./bin/www'",
     "start": "concurrently \"npm run express-start\"  \"npm run ng-start\""
