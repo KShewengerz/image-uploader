@@ -5,6 +5,10 @@ $start-breakpoint: 549px;
 
 // CONTAINER
 .container {
+  @include media($start-breakpoint) {
+    padding: 40px 0 !important;
+  }
+
   padding: 40px;
   position: relative;
 }

@@ -31,7 +31,12 @@
               "src/assets/styles/main.scss"
             ],
             "scripts": [],
-            "stylePreprocessorOptions": { "includePaths": [ "src/", "src/assets/styles" ] }
+            "stylePreprocessorOptions": {
+              "includePaths": [
+                "src/", "src/assets/styles",
+                "node_modules"
+              ]
+            }
           },
           "configurations": {
             "production": {

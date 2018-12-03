@@ -1,0 +1,13 @@
+@import 'main';
+
+
+// MASONRY IMAGE LIST
+.masonry-image-list {
+  $start-breakpoint: 549px;
+
+  @include media($start-breakpoint) {
+    @include mdc-image-list-masonry-columns(1);
+  }
+
+  @include mdc-image-list-masonry-columns(3);
+}

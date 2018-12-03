@@ -1,3 +1,11 @@
-<p>
-  photo-list works!
-</p>
+<ul class="mdc-image-list mdc-image-list--masonry masonry-image-list">
+
+  <li class="mdc-image-list__item"
+      *ngFor="let link of imageLinks">
+
+    <img class="mdc-image-list__image"
+         [src]="link">
+
+  </li>
+
+</ul>
