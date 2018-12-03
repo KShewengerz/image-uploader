@@ -1,17 +1,31 @@
-<mat-tab-group animationDuration="0ms">
+<div class="container">
 
-  <!-- PHOTOS -->
-  <mat-tab label="Photos">
-    <app-photo-grid-list></app-photo-grid-list>
-  </mat-tab>
+  <!-- TABS -->
+  <nav mat-tab-nav-bar>
+    <a mat-tab-link
+       *ngFor="let tab of tabs"
+       [routerLink]="tab.path"
+       routerLinkActive
+       #rla="routerLinkActive"
+       [active]="rla.isActive"
+       [disableRipple]="true">
+      {{tab.label}}
+    </a>
+  </nav>
 
-  <!-- VIDEOS -->
-  <mat-tab label="Videos">
-    <app-video-grid-list></app-video-grid-list>
-  </mat-tab>
+  <!-- SORT -->
+  <div class="sort">
+    <mat-form-field floatLabel="never">
+      <mat-select placeholder="Sort By">
+        <mat-option value="latest">Latest</mat-option>
+        <mat-option value="oldest">Oldest</mat-option>
+      </mat-select>
+    </mat-form-field>
+  </div><!-- END .sort -->
 
-</mat-tab-group>
+  <!-- CONTENT / ROUTER -->
+  <div class="content">
+    <router-outlet></router-outlet>
+  </div>
 
-<div class="float-right">
-  Hey
 </div>

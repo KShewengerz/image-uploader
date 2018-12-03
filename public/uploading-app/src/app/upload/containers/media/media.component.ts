@@ -1,4 +1,7 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
+
+import { Tab } from '@app/upload/containers/media/media.model';
 
 
 @Component({
@@ -8,6 +11,11 @@ import { Component } from '@angular/core';
 })
 export class MediaComponent {
   
- constructor() {}
+  tabs: Tab[] = [
+    { path: 'photos', label: 'Photos' },
+    { path: 'videos', label: 'Videos' }
+  ];
+  
+  constructor(private router: Router) {}
 
 }

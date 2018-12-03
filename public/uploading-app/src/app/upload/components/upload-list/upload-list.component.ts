@@ -1,6 +1,6 @@
 import { Component, Input } from '@angular/core';
 
-import { File } from '@app/upload/interfaces/file.interface';
+import { File } from '@app/upload/models/interfaces/file.interface';
 
 
 @Component({

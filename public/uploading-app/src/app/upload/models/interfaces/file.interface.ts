@@ -1,4 +1,4 @@
-import { FileType } from '@app/upload/enums/file-type.enum';
+import { FileType } from '@app/upload/models/enums/file-type.enum';
 
 
 export interface File {
