@@ -9,7 +9,7 @@ export const animations = {
         [
           style({ opacity: 0, transform: 'translateY(-15px)' }),
           stagger(
-            '50ms',
+            '550ms',
             animate(
               '550ms ease-out',
               style({ opacity: 1, transform: 'translateY(0px)' })
@@ -19,7 +19,7 @@ export const animations = {
         { optional: true }
       ),
       query(':leave',
-        animate('50ms', style({ opacity: 0 })), {
+        animate('550ms', style({ opacity: 0 })), {
           optional: true
         })
     ])

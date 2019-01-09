@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 
-import { UploadService } from '@app/upload/services/upload.service';
+import { tap } from 'rxjs/operators';
+
+import { Photo } from '@app/upload/models/interfaces/photo.interface';
 
 import { animations } from '@app/upload/components/photo-grid-list/photo-grid-list.animations';
 
@@ -13,18 +16,19 @@ import { animations } from '@app/upload/components/photo-grid-list/photo-grid-li
 })
 export class PhotoGridListComponent implements OnInit {
   
-  images: string[] = [];
+  photos: Photo[] = this.route.snapshot.data.photos;
   
-  constructor(private uploadService: UploadService) { }
+  constructor(private route: ActivatedRoute) { }
   
-  ngOnInit(): void {
-    this.fetchImages();
-  }
+  ngOnInit(): void { }
   
-  fetchImages() {
-    this.uploadService
-      .getPhotos()
-      .subscribe(images => this.images = images);
+  fetchPhotos(): void {
+    // this.route
+    //  .data
+    //  .pipe(
+    //    tap(data => console.log(data))
+    //  )
+    //  .subscribe(data => console.log(data));
   }
 
 }
