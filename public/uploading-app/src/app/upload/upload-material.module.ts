@@ -6,7 +6,8 @@ import {
   MatProgressBarModule,
   MatMenuModule,
   MatTabsModule,
-  MatSelectModule
+  MatSelectModule,
+  MatGridListModule
 } from '@angular/material';
 
 
@@ -17,7 +18,8 @@ import {
     MatProgressBarModule,
     MatMenuModule,
     MatTabsModule,
-    MatSelectModule
+    MatSelectModule,
+    MatGridListModule
   ]
 })
 export class UploadMaterialModule {}

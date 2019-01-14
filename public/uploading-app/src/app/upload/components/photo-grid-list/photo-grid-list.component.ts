@@ -21,14 +21,5 @@ export class PhotoGridListComponent implements OnInit {
   constructor(private route: ActivatedRoute) { }
   
   ngOnInit(): void { }
-  
-  fetchPhotos(): void {
-    // this.route
-    //  .data
-    //  .pipe(
-    //    tap(data => console.log(data))
-    //  )
-    //  .subscribe(data => console.log(data));
-  }
 
 }

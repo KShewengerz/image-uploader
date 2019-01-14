@@ -1,3 +1,19 @@
-<p>
-  video-list works!
-</p>
+<mat-grid-list [cols]="gridListOptions.cols"
+               [rowHeight]="gridListOptions.rowHeight"
+               [gutterSize]="gridListOptions.gutterSize">
+
+  <mat-grid-tile *ngFor="let video of videos"
+                 [colspan]="gridRowColSpan"
+                 [rowspan]="gridRowColSpan">
+
+    <video [width]="videoWidth" controls>
+      <source [src]="video.link"
+              type="video/mp4">
+      Your browser does not support HTML5 video.
+    </video>
+
+  </mat-grid-tile>
+</mat-grid-list>
+
+
+
