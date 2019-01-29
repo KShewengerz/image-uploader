@@ -1,12 +1,10 @@
-<mat-grid-list [cols]="gridListOptions.cols"
-               [rowHeight]="gridListOptions.rowHeight"
-               [gutterSize]="gridListOptions.gutterSize">
+<mat-grid-list [cols]="gridColumn"
+               [rowHeight]="rowHeight"
+               gutterSize="15px">
 
-  <mat-grid-tile *ngFor="let video of videos"
-                 [colspan]="gridRowColSpan"
-                 [rowspan]="gridRowColSpan">
+  <mat-grid-tile *ngFor="let video of videos">
 
-    <video [width]="videoWidth" controls>
+    <video controls>
       <source [src]="video.link"
               type="video/mp4">
       Your browser does not support HTML5 video.
