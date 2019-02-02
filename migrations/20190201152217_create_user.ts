@@ -10,7 +10,7 @@ export async function up(knex: Knex) {
     table.string(User.LastName, 128).notNullable();
     table.string(User.EmailAddress, 255).notNullable();
     table.enum(User.Gender, ["m", "f"]).notNullable();
-    table.date(User.Password).notNullable();
+    table.string(User.Password).notNullable();
   });
 }
 
