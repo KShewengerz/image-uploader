@@ -4,6 +4,8 @@ import { File, FileType } from "../shared/enums/-index";
 
 
 export async function up(knex: Knex) {
+  const fileTypeTableId = `${FileType.Table}.${FileType.Id}`;
+  
   return await knex.schema.createTable(File.Table, table => {
     table.uuid(File.Id).primary();
     table.string(File.Name, 128).notNullable();
@@ -12,12 +14,12 @@ export async function up(knex: Knex) {
     table.date(File.UploadedOn).notNullable();
   
     table.foreign(File.TypeId)
-      .references(`${FileType.Table}.${FileType.Id}`)
+      .references(fileTypeTableId)
       .onUpdate("CASCADE")
       .onDelete("CASCADE");
   });
 }
 
 export async function down(knex: Knex) {
-  return await knex.schema.dropTable(User.Table);
+  return await knex.schema.dropTable(File.Table);
 }

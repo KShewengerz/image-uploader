@@ -7,3 +7,9 @@ export enum User {
   Password      = 'password',
   Gender        = 'gender'
 }
+
+export enum UserFile {
+  Table   = 'user_file',
+  FileId  = 'file_id',
+  UserId  = 'user_id'
+}
