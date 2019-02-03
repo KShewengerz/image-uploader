@@ -16,6 +16,8 @@
     "allowSyntheticDefaultImports": true,
     "paths": {
       "@app/*": ["public/uploading-app/src/app/*"],
+      "@interfaces/*": ["shared/interfaces/*"],
+      "@enums/*": ["shared/enums/*"],
       "*": [
         "node_modules/*",
         "src/types/*"

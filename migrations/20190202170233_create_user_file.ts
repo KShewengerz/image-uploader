@@ -1,22 +1,22 @@
 import * as Knex from "knex";
 
-import { UserFile, File, User } from "../shared/enums/-index";
+import { UserFileTable, FileTable, UserTable } from "@enums/tables";
 
 
 export async function up(knex: Knex) {
-  const fileTableId = `${File.Table}.${File.Id}`;
-  const userTableId = `${User.Table}.${User.Id}`;
+  const fileTableId = `${FileTable.Table}.${FileTable.Id}`;
+  const userTableId = `${UserTable.Table}.${UserTable.Id}`;
   
-  return await knex.schema.createTable(UserFile.Table, table => {
-    table.uuid(UserFile.FileId).notNullable();
-    table.uuid(UserFile.UserId).notNullable();
+  return await knex.schema.createTable(UserFileTable.Table, table => {
+    table.uuid(UserFileTable.FileId).notNullable();
+    table.uuid(UserFileTable.UserId).notNullable();
     
-    table.foreign(UserFile.FileId)
+    table.foreign(UserFileTable.FileId)
       .references(fileTableId)
       .onUpdate("CASCADE")
       .onDelete("CASCADE");
   
-    table.foreign(UserFile.UserId)
+    table.foreign(UserFileTable.UserId)
       .references(userTableId)
       .onUpdate("CASCADE")
       .onDelete("CASCADE");
@@ -24,5 +24,5 @@ export async function up(knex: Knex) {
 }
 
 export async function down(knex: Knex) {
-  return await knex.schema.dropTable(UserFile.Table);
+  return await knex.schema.dropTable(UserFileTable.Table);
 }

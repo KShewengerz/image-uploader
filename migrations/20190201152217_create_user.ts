@@ -1,19 +1,19 @@
 import * as Knex from "knex";
 
-import { User } from "../shared/enums/-index";
+import { UserTable } from "@enums/tables";
 
 
 export async function up(knex: Knex) {
-  return await knex.schema.createTable(User.Table, table => {
-    table.uuid(User.Id).primary();
-    table.string(User.FirstName, 128).notNullable();
-    table.string(User.LastName, 128).notNullable();
-    table.string(User.EmailAddress, 255).notNullable();
-    table.enum(User.Gender, ["m", "f"]).notNullable();
-    table.string(User.Password).notNullable();
+  return await knex.schema.createTable(UserTable.Table, table => {
+    table.uuid(UserTable.Id).primary();
+    table.string(UserTable.FirstName, 128).notNullable();
+    table.string(UserTable.LastName, 128).notNullable();
+    table.string(UserTable.EmailAddress, 255).notNullable();
+    table.enum(UserTable.Gender, ["m", "f"]).notNullable();
+    table.string(UserTable.Password).notNullable();
   });
 }
 
 export async function down(knex: Knex) {
-  return await knex.schema.dropTable(User.Table);
+  return await knex.schema.dropTable(UserTable.Table);
 }

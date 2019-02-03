@@ -1,4 +1,4 @@
-export enum User {
+export enum UserTable {
   Table         = 'user',
   Id            = 'id',
   FirstName     = 'first_name',
@@ -8,7 +8,7 @@ export enum User {
   Gender        = 'gender'
 }
 
-export enum UserFile {
+export enum UserFileTable {
   Table   = 'user_file',
   FileId  = 'file_id',
   UserId  = 'user_id'

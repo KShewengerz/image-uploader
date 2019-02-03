@@ -1,4 +1,4 @@
-export enum File {
+export enum FileTable {
   Table       = 'file',
   Id          = 'id',
   Name        = 'name',
@@ -7,7 +7,7 @@ export enum File {
   UploadedOn  = 'uploaded_on'
 }
 
-export enum FileType {
+export enum FileTypeTable {
   Table  = 'file_type',
   Id     = 'id',
   Name   = 'name'
