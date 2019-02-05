@@ -1,6 +1,6 @@
 import * as Knex from "knex";
 
-import { UserFileTable, FileTable, UserTable } from "@enums/tables";
+import { UserFileTable, FileTable, UserTable } from "@app/enums";
 
 
 export async function up(knex: Knex) {

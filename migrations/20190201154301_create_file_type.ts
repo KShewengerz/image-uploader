@@ -1,7 +1,7 @@
 import * as Knex from "knex";
 
-import { FileTypeTable } from "@enums/tables";
-import { FileType } from '@interfaces/common';
+import { FileTypeTable } from "@app/enums";
+import { FileType } from '@app/interfaces';
 
 
 export async function up(knex: Knex) {

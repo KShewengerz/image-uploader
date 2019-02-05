@@ -7,8 +7,8 @@
     ["module-resolver", {
       "root": ["./"],
       "alias": {
-        "@interfaces": ["./shared/interfaces"],
-        "@enums": ["./shared/enums"]
+        "@app/interfaces": ["./shared/interfaces"],
+        "@app/enums": ["./shared/enums"]
       }
     }]
   ]
