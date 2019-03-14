@@ -38,7 +38,7 @@
     "@angular-devkit/build-angular": "^0.12.3",
     "@angular/cli": "^7.1.0",
     "@angular/compiler": "^7.1.1",
-    "@angular/compiler-cli": "^7.1.1",
+    "@angular/compiler-cli": "^7.2.9",
     "@babel/cli": "^7.1.5",
     "@babel/core": "^7.1.6",
     "@babel/node": "^7.0.0-beta.45",
