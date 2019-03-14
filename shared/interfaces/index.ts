@@ -1,1 +1,2 @@
-export * from './common/-index';
+export * from './common/file';
+export * from './common/user';

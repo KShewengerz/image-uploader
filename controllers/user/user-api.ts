@@ -1,4 +1,13 @@
 import { Request, Response, NextFunction } from "express";
+import * as uuid from "uuid/v4";
+
+import { db } from '../../config/db';
+
+import { UserAccountTable, HttpStatusCode } from '@app/enums';
+import { User } from '@app/interfaces';
+
+const snakeCase = require("snakecase-keys");
+const camelCase = require("camelcase-keys");
 
 
 /**
@@ -12,7 +21,15 @@ import { Request, Response, NextFunction } from "express";
  * @returns {Promise<void>}
  */
 export async function addUser(req: Request, res: Response, next: NextFunction): Promise<void> {
-  res.json("Successfully Added User");
+  const body = snakeCase(req.body);
+  
+  body.id  = uuid();
+  
+  await db(UserAccountTable.Table)
+    .insert(body)
+    .catch(err => err);
+  
+  res.sendStatus(HttpStatusCode.CREATED);
 }
 
 
@@ -27,24 +44,15 @@ export async function addUser(req: Request, res: Response, next: NextFunction): 
  * @returns {Promise<void>}
  */
 export async function updateUser(req: Request, res: Response, next: NextFunction): Promise<void> {
-  res.json("Successfully Updated User");
-}
-
-
-/**
- * @api {get} /user
- * @description Fetches all users.
- *
- * @apiParam {Uuid} id
- *
- * @param {Request} req
- * @param {Response} res
- * @param {NextFunction} next
- *
- * @returns {Promise<void>}
- */
-export async function getUsers(req: Request, res: Response, next: NextFunction): Promise<void> {
-  res.json("Successfully Get Users");
+  const id   = req.params.id;
+  const body = snakeCase(req.body);
+  
+  await db(UserAccountTable.Table)
+  .where({ id })
+  .update(body)
+  .catch(err => err);
+  
+  res.sendStatus(HttpStatusCode.OK);
 }
 
 
@@ -61,23 +69,11 @@ export async function getUsers(req: Request, res: Response, next: NextFunction):
  * @returns {Promise<void>}
  */
 export async function getUser(req: Request, res: Response, next: NextFunction): Promise<void> {
-  res.json("Successfully Get User Info");
+  const id           = req.params.id;
+  const fetchUser    = await db(UserAccountTable.Table).where({ id });
+  const result: User = camelCase(fetchUser);
+  
+  res.json(result);
 }
 
-
-/**
- * @api {delete} /user/:id
- * @description Deletes user record by id.
- *
- * @apiParam {Uuid} id
- *
- * @param {Request} req
- * @param {Response} res
- * @param {NextFunction} next
- *
- * @returns {Promise<void>}
- */
-export async function deleteUser(req: Request, res: Response, next: NextFunction): Promise<void> {
-  res.json("Successfully Deleted User");
-}
 

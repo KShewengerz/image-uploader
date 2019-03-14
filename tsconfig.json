@@ -16,6 +16,7 @@
     "allowSyntheticDefaultImports": true,
     "paths": {
       "@app/*": ["public/uploading-app/src/app/*"],
+      "@app/controllers": ["controllers"],
       "@app/interfaces": ["shared/interfaces"],
       "@app/enums": ["shared/enums"],
       "*": [

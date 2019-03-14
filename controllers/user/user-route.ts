@@ -16,12 +16,7 @@ router.post("/", api.addUser);
 /**
  * @description Update's user information.
  */
-router.put("/", api.updateUser);
-
-/**
- * @description Get All Users
- */
-router.get("/", api.getUsers);
+router.put("/:id", api.updateUser);
 
 
 /**
@@ -29,13 +24,6 @@ router.get("/", api.getUsers);
  * @apiParam {Uuid} userId
  */
 router.get("/:id", api.getUser);
-
-
-/**
- * @description Deletes user record by id
- * @apiParam {Uuid} userId
- */
-router.delete("/:id", api.deleteUser);
 
 
 /**

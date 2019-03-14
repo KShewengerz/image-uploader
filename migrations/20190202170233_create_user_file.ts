@@ -1,11 +1,11 @@
 import * as Knex from "knex";
 
-import { UserFileTable, FileTable, UserTable } from "@app/enums";
+import { UserFileTable, FileTable, UserAccountTable } from "@app/enums";
 
 
 export async function up(knex: Knex) {
   const fileTableId = `${FileTable.Table}.${FileTable.Id}`;
-  const userTableId = `${UserTable.Table}.${UserTable.Id}`;
+  const userTableId = `${UserAccountTable.Table}.${UserAccountTable.Id}`;
   
   return await knex.schema.createTable(UserFileTable.Table, table => {
     table.uuid(UserFileTable.FileId).notNullable();

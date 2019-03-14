@@ -9,9 +9,7 @@ import * as path from 'path';
 import * as favicon from 'serve-favicon';
 import * as cors from 'cors';
 
-import knex = require("./config/db");
-
-import { userRoutes } from './controllers/-index';
+import { userRoutes } from '@app/controllers';
 
 
 export class Index {
@@ -71,7 +69,6 @@ export class Index {
    * Api Routes
    */
   private routes(): void {
-    this.app.use('/', (req: Request, res: Response, next: NextFunction) => res.send("Welcome to Express"));
     this.app.use('/user', userRoutes);
   }
 }

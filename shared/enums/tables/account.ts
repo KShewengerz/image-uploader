@@ -1,5 +1,5 @@
-export enum UserTable {
-  Table         = 'user',
+export enum UserAccountTable {
+  Table         = 'user_account',
   Id            = 'id',
   FirstName     = 'first_name',
   LastName      = 'last_name',
